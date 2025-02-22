@@ -1,0 +1,92 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  font-family: sans-serif;
+  margin: 0;
+  min-height: 100%;
+  place-items: center;
+
+  zoom: 2;
+}
+
+.logbook {
+  background-color: rgb(0, 125, 70);
+  background-color: yellowgreen;
+  color: darkgreen;
+
+  border-radius: 1px;
+  box-shadow: 1px 2px 3px lightgrey;
+  box-sizing: border-box;
+  display: flex;
+  padding: 2px 2px 2px 32px;
+}
+
+.l-4 {
+  height: 1.6cm;
+  width: 9.5cm;
+}
+
+.l-4a {
+  height: 1.6cm;
+  width: 8cm;
+}
+
+.l-3 {
+  height: 1.6cm;
+  width: 6.2cm;
+}
+
+.l-2 {
+  height: 2.5cm;
+  width: 6cm;
+}
+
+.l-1 {
+  height: 2cm;
+  width: 4.5cm;
+}
+
+.logbook__gc-logo {
+  fill: currentColor;
+  flex-shrink: 0;
+  height: 100%;
+  margin-left: 2%;
+}
+
+.logbook__title {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-size: 65%;
+  justify-content: space-between;
+  margin: 1% 4px;
+  text-align: center;
+
+  strong,
+  span {
+    box-sizing: border-box;
+    line-height: 1;
+    min-height: 46%;
+    display: grid;
+    place-content: center;
+  }
+
+  strong {
+    text-transform: uppercase;
+  }
+
+  span {
+    background-color: white;
+    color: black;
+  }
+}
+
+.logbook__avatar {
+  border-radius: 4px;
+  height: 100%;
+  margin-inline-start: 2px;
+  scale: 0.93;
+}
