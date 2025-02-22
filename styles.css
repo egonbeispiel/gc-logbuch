@@ -1,26 +1,42 @@
 html {
+  --color: #02874d;
+
   height: 100%;
 }
 
 body {
   display: grid;
   font-family: sans-serif;
-  margin: 0;
+  gap: 16px 8px;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
   min-height: 100%;
-  place-items: center;
+  align-items: center;
 
-  zoom: 2;
+  zoom: 1.5;
+  width: 19cm;
 }
 
 .logbook {
   background-color: black;
-  color: lightgreen;
-
+  background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=24&colors=93");
+  background-size: 100%;
   border-radius: 1px;
-  box-shadow: 1px 2px 3px lightgrey;
+  box-shadow: 1px 2px 3px silver;
   box-sizing: border-box;
+  color: white;
+  container-type: inline-size;
   display: flex;
-  padding: 2px 2px 2px 32px;
+  padding-block: 1mm;
+  padding-inline: 8mm 1mm;
+
+  &:nth-child(odd) {
+    justify-self: end;
+  }
+
+  &:nth-child(even) {
+    justify-self: start;
+  }
 }
 
 .l-4 {
@@ -48,44 +64,81 @@ body {
   width: 4.5cm;
 }
 
-.logbook__gc-logo {
-  fill: currentColor;
-  flex-shrink: 0;
-  height: 100%;
-  margin-left: 2%;
+.e-1 {
+  height: 2cm;
+  width: 3.5cm;
 }
 
-.logbook__title {
+.logbook__gc-logo {
+  align-self: center;
+  fill: currentColor;
+  flex-shrink: 0;
+  height: min(1.4cm, 100%);
+  margin-left: 1.5%;
+
+  @container (max-width: 4.5cm) {
+    display: none;
+  }
+}
+
+.logbook__content {
+  color: var(--color);
+  direction: ltr;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  font-size: 65%;
-  justify-content: space-between;
-  margin: 1% 4px;
+  gap: 1mm;
+  margin: 0.75% 1mm;
+  outline: 0;
+}
+
+strong,
+.logbook__content div {
+  flex-grow: 1;
   text-align: center;
+}
 
-  strong,
-  span {
-    box-sizing: border-box;
-    line-height: 1;
-    min-height: 46%;
-    display: grid;
-    place-content: center;
-  }
+strong {
+  display: grid;
+  font-size: 65%;
+  line-height: 1.2;
+  place-content: center;
+  text-transform: uppercase;
+}
 
-  strong {
-    text-transform: uppercase;
-  }
+.logbook__content div {
+  background-color: #fffc;
+  border-radius: 0;
+  border: 0;
+  color: black;
+  font-family: monospace;
+  font-size: min(60%, 8cqi);
+  font-weight: bold;
+  line-height: 1.4;
+  outline: 0;
+  text-wrap-style: balance;
+  width: 100%;
+}
 
-  span {
-    background-color: white;
-    color: lightgrey;
+span {
+  @container (max-width: 8cm) {
+    display: none;
   }
 }
 
+a {
+  color: var(--color);
+  text-decoration: none;
+}
+
 .logbook__avatar {
+  align-self: center;
   border-radius: 4px;
-  height: 100%;
-  margin-inline-start: 2px;
-  scale: 0.93;
+  height: min(1.4cm, 100%);
+  margin-inline-start: 1%;
+  scale: 0.95;
+
+  @container (max-width: 6.2cm) {
+    display: none;
+  }
 }
