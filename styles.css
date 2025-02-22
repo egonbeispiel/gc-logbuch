@@ -13,9 +13,8 @@ body {
 }
 
 .logbook {
-  background-color: rgb(0, 125, 70);
-  background-color: yellowgreen;
-  color: darkgreen;
+  background-color: black;
+  color: lightgreen;
 
   border-radius: 1px;
   box-shadow: 1px 2px 3px lightgrey;
