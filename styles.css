@@ -3,90 +3,184 @@ html {
 }
 
 body {
+  align-content: center;
   display: grid;
-  font-family: sans-serif;
+  gap: 16px;
+  justify-items: center;
   margin: 0;
   min-height: 100%;
-  place-items: center;
-
-  zoom: 2;
+  zoom: 1;
 }
 
 .logbook {
-  background-color: rgb(0, 125, 70);
-  background-color: yellowgreen;
-  color: darkgreen;
+  --logbook-gap: 8px;
 
+  background-color: white;
+  background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=12&colors=93");
+/*   background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=12&colors=67"); */
+  background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=12&colors=71");
+/*   background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=12"); */
+  background-size: 100%;
   border-radius: 1px;
-  box-shadow: 1px 2px 3px lightgrey;
-  box-sizing: border-box;
-  display: flex;
-  padding: 2px 2px 2px 32px;
+  box-shadow: 1px 2px 3px silver;
+  color: black;
+  display: grid;
+  gap: var(--logbook-gap);
+  grid-template-columns: repeat(2, var(--logbook-width));
+  grid-template-rows: var(--logbook-height);
+  position: relative;
+
+  &::after {
+    background-color: #0002;
+    bottom: 0;
+    content: "";
+    left: 50%;
+    position: absolute;
+    top: 0;
+    width: var(--logbook-gap);
+    translate: -50%;
+  }
+}
+
+.l-7 {
+  --logbook-height: 3cm;
+  --logbook-width: 9.5cm;
+}
+
+.l-6 {
+  --logbook-height: 5.2cm;
+  --logbook-width: 8.5cm;
+}
+
+.l-5 {
+  --logbook-height: 4cm;
+  --logbook-width: 5cm;
+}
+
+.l-5a {
+  --logbook-height: 3.5cm;
+  --logbook-width: 4.8cm;
 }
 
 .l-4 {
-  height: 1.6cm;
-  width: 9.5cm;
+  --logbook-height: 1.6cm;
+  --logbook-width: 9.5cm;
 }
 
 .l-4a {
-  height: 1.6cm;
-  width: 8cm;
+  --logbook-height: 1.6cm;
+  --logbook-width: 8cm;
 }
 
 .l-3 {
-  height: 1.6cm;
-  width: 6.2cm;
+  --logbook-height: 1.6cm;
+  --logbook-width: 6.2cm;
 }
 
 .l-2 {
-  height: 2.5cm;
-  width: 6cm;
+  --logbook-height: 2.5cm;
+  --logbook-width: 6cm;
 }
 
 .l-1 {
-  height: 2cm;
-  width: 4.5cm;
+  --logbook-height: 2cm;
+  --logbook-width: 4.5cm;
+}
+
+.e-1 {
+  --logbook-height: 2cm;
+  --logbook-width: 3.5cm;
+}
+
+.logbook__cover {
+  container-type: size;
+  padding-block: 1mm;
+  display: flex;
+}
+
+.logbook__front {
+  padding-inline: 8mm 1mm;
+}
+
+.logbook__back {
+  padding-inline: 1mm 8mm;
 }
 
 .logbook__gc-logo {
-  fill: currentColor;
+  align-self: center;
+  fill: white;
   flex-shrink: 0;
-  height: 100%;
-  margin-left: 2%;
+  height: min(1.4cm, 100%);
+  margin-left: 1.25%;
+
+  @container (width <= 4.5cm) {
+    display: none;
+  }
 }
 
-.logbook__title {
+.logbook__content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  font-size: 65%;
-  justify-content: space-between;
-  margin: 1% 4px;
-  text-align: center;
+  gap: 1mm;
+  margin: 0.75% 1mm;
 
-  strong,
-  span {
-    box-sizing: border-box;
-    line-height: 1;
-    min-height: 46%;
-    display: grid;
+  > * {
+    flex-grow: 1;
     place-content: center;
+    text-align: center;
   }
 
-  strong {
-    text-transform: uppercase;
-  }
-
-  span {
-    background-color: white;
-    color: black;
+  > div {
+    font-family: monospace;
+    font-size: min(60%, 12cqb);
+    font-weight: bold;
+    line-height: 1.3;
+    margin-inline: auto;
+    text-wrap-style: balance;
+    width: min(4.5cm, 100%);
   }
 }
 
+strong {
+  font-family: sans-serif;
+  font-size: 10px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+[contenteditable] {
+  background-color: #fffc;
+  border-radius: 0;
+  border: 0;
+  color: black;
+  max-height: 1.4cm;
+  outline: 0;
+}
+
+.hidden {
+  @container (width <= 6.2cm) {
+    display: none;
+  }
+}
+
+a {
+  color: #02874d;
+  text-decoration: none;
+}
+
+small {
+  font-size: 6px;
+}
+
 .logbook__avatar {
+  align-self: center;
   border-radius: 4px;
-  height: 100%;
-  margin-inline-start: 2px;
-  scale: 0.93;
+  height: min(1.4cm, 100%);
+  margin-inline-start: 1%;
+  scale: 0.95;
+
+  @container (width <= 6.2cm) {
+    display: none;
+  }
 }
