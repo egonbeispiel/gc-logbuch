@@ -9,6 +9,7 @@ body {
   justify-items: center;
   margin: 0;
   min-height: 100%;
+  zoom: 1.1;
 }
 
 .logbook {
@@ -52,7 +53,6 @@ body {
 
   background-color: #e8ddcb;
   background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=12&colors=5");
-  opacity: 0.3;
 }
 
 .l-5 {
@@ -195,10 +195,16 @@ body {
 
 .logbook__text {
   font-family: monospace;
-  font-size: clamp(6px, 10cqb, 10px);
+  font-size: clamp(8px, 10cqb, 10px);
   font-weight: bold;
   line-height: 1.3;
   text-wrap-style: balance;
+
+  .l-6 &,
+  .l-4 &,
+  .l-4a & {
+    zoom: 1.1;
+  }
 }
 
 a {
@@ -207,6 +213,7 @@ a {
 }
 
 small {
+  display: none;
   font-size: 6px;
 }
 
