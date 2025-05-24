@@ -9,7 +9,7 @@ body {
   justify-items: center;
   margin: 0;
   min-height: 100%;
-  zoom: 1.1;
+  zoom: 1.2;
 }
 
 .logbook {
@@ -17,9 +17,8 @@ body {
 
   background-color: white;
   background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=12");
-  background-size: 106% 111%;
+  background-size: 106%;
   border-radius: 1px;
-  box-shadow: 1px 2px 3px silver;
   color: var(--logbook-color, black);
   container: logbook-height / size;
   display: grid;
@@ -28,23 +27,25 @@ body {
   grid-template-rows: var(--logbook-height);
   position: relative;
 
-  /* &::after {
-    background-color: black;
-    content: "";
-    inset: 0 50%;
-    opacity: 0.05;
-    position: absolute;
-    translate: -50%;
-    width: var(--logbook-gap);
-  } */
+  @media screen {
+    box-shadow: 1px 2px 5px lightgray;
+
+    &::after {
+      background-color: black;
+      content: "";
+      inset: 0 50%;
+      opacity: 0.025;
+      position: absolute;
+      translate: -50%;
+      width: var(--logbook-gap);
+    }
+  }
 }
 
 .l-7 {
   --logbook-color: #fffe;
   --logbook-height: 3cm;
   --logbook-width: 9.5cm;
-
-  opacity: 0.3;
 }
 
 .l-6 {
@@ -53,6 +54,7 @@ body {
 
   background-color: #e8ddcb;
   background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=12&colors=5");
+  background-size: 106% 111.5%;
 }
 
 .l-5 {
@@ -61,7 +63,7 @@ body {
 
   background-color: #7fc7af;
   background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=12&colors=10");
-  background-size: 106% 112%;
+  background-size: 106% 111.5%;
 }
 
 .l-5a {
@@ -69,7 +71,7 @@ body {
   --logbook-height: 3.5cm;
   --logbook-width: 4.8cm;
 
-  opacity: 0.3;
+  background-size: 106% 111.5%;
 }
 
 .l-4 {
@@ -78,7 +80,6 @@ body {
 
   background-color: #eee6ab;
   background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=12&colors=32");
-  opacity: 0.3;
 }
 
 .l-4a {
@@ -87,7 +88,6 @@ body {
 
   background-color: #fad089;
   background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=12&colors=24");
-  background-size: 106% 110%;
 }
 
 .l-3 {
@@ -96,7 +96,6 @@ body {
 
   background-color: #7fc7af;
   background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=12&colors=10");
-  opacity: 0.3;
 }
 
 .l-2 {
@@ -113,7 +112,7 @@ body {
 
   background-color: #e5ddcb;
   background-image: url("https://generative-placeholders.glitch.me/image?width=1200&height=240&style=cellular-automata&cells=12&colors=52");
-  opacity: 0.3;
+  background-size: 106% 112%;
 }
 
 .e-1 {
@@ -154,7 +153,7 @@ body {
   flex-shrink: 0;
   height: min(1.4cm, 100%);
   margin-left: 1.25%;
-  opacity: 0.95;
+  opacity: 0.9;
 }
 
 .logbook__content {
@@ -179,6 +178,12 @@ body {
   font-weight: bold;
   line-height: 1.2;
   text-transform: uppercase;
+
+  .l-7 &,
+  .l-4 &,
+  .l-4a & {
+    zoom: 1.2;
+  }
 }
 
 .logbook__input {
@@ -200,10 +205,11 @@ body {
   line-height: 1.3;
   text-wrap-style: balance;
 
+  .l-7 &,
   .l-6 &,
   .l-4 &,
   .l-4a & {
-    zoom: 1.1;
+    zoom: 1.2;
   }
 }
 
